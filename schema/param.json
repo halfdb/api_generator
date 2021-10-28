@@ -1,0 +1,32 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "oneOf": [
+    {
+      "type": "object",
+      "properties": {
+        "key": {
+          "type": "string"
+        },
+        "mandatory": {
+          "type": "boolean",
+          "default": true
+        },
+        "require_value": {
+          "type": "boolean",
+          "default": true
+        },
+        "comment": {
+          "type": "string",
+          "default": ""
+        }
+      },
+      "required": [
+        "key"
+      ]
+    },
+    {
+      "type": "string",
+      "description": "Use a single string to represent the key. Others will be set to default value."
+    }
+  ]
+}

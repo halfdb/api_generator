@@ -1,0 +1,45 @@
+{
+  "$schema": "./schema/api_doc.json",
+  "title": "Chat API Doc",
+  "section": [
+    {
+      "title": "Account",
+      "description": "Account related APIs",
+      "list": [
+        { "$ref": "api_test.json" },
+        {
+          "description": "Register",
+          "path": "/register",
+          "methods": ["POST"],
+          "params": [
+            "username",
+            "password"
+          ],
+          "returns": [
+            200,
+            {
+              "status_code": 409,
+              "description": "Unable to create user due to conflict."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Chatting",
+      "description": "Chatting related APIs",
+      "list": [
+        {
+          "description": "Unread messages",
+          "path": "/msg/unread",
+          "methods": ["GET"],
+          "params": [],
+          "returns": [
+            200,
+            403
+          ]
+        }
+      ]
+    }
+  ]
+}

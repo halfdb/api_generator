@@ -1,0 +1,39 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "raw.githubusercontent.com/halfdb/api_generator/main/schema/api_doc.json",
+
+  "type":"object",
+  "properties": {
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "string"
+    },
+    "list": {
+      "$ref": "api_list.json"
+    },
+    "section": {
+      "type": "array",
+      "items": {
+        "$ref": "#"
+      }
+    }
+  },
+  "required": [
+    "title"
+  ],
+  "anyOf":[
+    {
+      "required": [
+        "description",
+        "list"
+      ]
+    },
+    {
+      "required": [
+        "section"
+      ]
+    }
+  ]
+}

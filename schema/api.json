@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "properties": {
+    "description": { "type": "string" },
+    "methods": {
+      "type": "array",
+      "items": { "$ref": "method.json" }
+    },
+    "params": {
+      "items": { "$ref": "param.json" },
+      "type": "array"
+    },
+    "path": {
+      "type": "string",
+      "format": "iri-reference"
+    },
+    "returns": {
+      "type": "array",
+      "items": { "$ref": "return_value.json" }
+    }
+  },
+  "required": [
+    "path",
+    "methods",
+    "description",
+    "returns"
+  ],
+  "type": "object"
+}

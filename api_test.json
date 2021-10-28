@@ -1,0 +1,15 @@
+{
+  "$schema": "./schema/api.json",
+
+  "methods": ["POST"],
+  "params": [
+    "username",
+    "password"
+  ],
+  "path": "/login",
+  "description": "Login",
+  "returns": [
+    200,
+    403
+  ]
+}

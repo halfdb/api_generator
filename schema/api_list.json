@@ -1,0 +1,11 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "description": "The root schema comprises the entire JSON document.",
+  "items": {
+    "oneOf": [
+      { "$ref": "api.json" },
+      { "$ref": "reference.json" }
+    ]
+  },
+  "type": "array"
+}

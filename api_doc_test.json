@@ -1,5 +1,5 @@
 {
-  "$schema": "./schema/api_doc.json",
+  "$schema": "https://raw.githubusercontent.com/halfdb/api_generator/main/schema/api_doc.json",
   "title": "Chat API Doc",
   "section": [
     {

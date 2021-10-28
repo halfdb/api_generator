@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "raw.githubusercontent.com/halfdb/api_generator/main/schema/api_doc.json",
+  "$id": "https://raw.githubusercontent.com/halfdb/api_generator/main/schema/api_doc.json",
 
   "type":"object",
   "properties": {

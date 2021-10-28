@@ -1,5 +1,5 @@
 {
-  "$schema": "./schema/api.json",
+  "$schema": "https://raw.githubusercontent.com/halfdb/api_generator/main/schema/api.json",
 
   "methods": ["POST"],
   "params": [

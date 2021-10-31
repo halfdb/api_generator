@@ -6,7 +6,19 @@
       "title": "Account",
       "description": "Account related APIs",
       "list": [
-        { "$ref": "api_test.json" },
+        {
+          "methods": ["POST"],
+          "params": [
+            "username",
+            "password"
+          ],
+          "path": "/login",
+          "description": "Login",
+          "returns": [
+            200,
+            403
+          ] 
+        },
         {
           "description": "Register",
           "path": "/register",

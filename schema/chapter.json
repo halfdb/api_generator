@@ -1,6 +1,5 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://raw.githubusercontent.com/halfdb/api_generator/main/schema/api_doc.json",
 
   "type":"object",
   "properties": {
@@ -10,14 +9,12 @@
     "description": {
       "type": "string"
     },
-    "chapters": {
-      "type": "array",
-      "items": { "$ref": "chapter.json" }
+    "list": {
+      "$ref": "api_list.json"
     }
   },
   "required": [
     "title",
-    "description",
-    "chapters"
+    "description"
   ]
 }

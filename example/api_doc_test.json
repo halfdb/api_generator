@@ -1,7 +1,8 @@
 {
   "$schema": "https://raw.githubusercontent.com/halfdb/api_generator/main/schema/api_doc.json",
   "title": "Chat API Doc",
-  "section": [
+  "description": "Document for Chat APIs",
+  "chapters": [
     {
       "title": "Account",
       "description": "Account related APIs",

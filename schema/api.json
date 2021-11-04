@@ -17,6 +17,10 @@
     "returns": {
       "type": "array",
       "items": { "$ref": "return_value.json" }
+    },
+    "return_example": {
+      "type": "string",
+      "description": "example of returned value"
     }
   },
   "required": [

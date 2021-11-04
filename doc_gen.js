@@ -1,28 +1,26 @@
 function params(obj) {
   if (obj.length === 0) return ""
 
+  var header = "| Field name | Mandatory | Require value | Comment |\n"
+  header += "|--|--|--|--|\n"
   const strings = []
   for (const item of obj) {
     if (typeof item === "string") {
-      strings.push(`#### \`${item}\`\n- *Mandatory* = \`true\`\n- *Require value* = \`true\``)
+      strings.push(`|\`${item}\` | \`true\` | \`true\`| |`)
     } else if (typeof item === "object") {
-      var item_str = `#### \`${item.key}\``
+      var item_str = `|\`${item}\` | \`true\` | \`true\`| `
       if ('comment' in item) {
-        item_str += `\n- ${item.comment}`
+        item_str += item.comment
       }
-      item_str += `\n- *Mandatory* = \`${item.mandatory}\`\n- *Require value* = \`${item.require_value}\``
+      item_str += " |"
       strings.push(item_str)
     }
   }
-  return "### Params\n\n" + strings.join("\n\n")
+  return "### Params\n\n" + header + strings.join("\n")
 }
 
 function methods(obj) {
-  const strings = []
-  for (const method of obj) {
-    strings.push("`" + method + "`")
-  }
-  return "- *Method* = " + strings.join(", ")
+  return obj.join(', ')
 }
 
 function returns(obj) {
@@ -49,19 +47,22 @@ function returns(obj) {
 function apis(obj) {
   const strings = []
   for (const item of obj) {
-    var str = `## \`${item.path}\`\n`
+    var str = `## \`${methods(item.methods)} ${item.path}\`\n`
     if ("description" in item) {
-      str += `- ${item.description}\n`
+      str += `${item.description}\n`
     }
-    str += methods(item.methods)
     if ("params" in item) {
       str += "\n\n" + params(item.params)
     }
     str += "\n\n" + returns(item.returns)
+
+    if ("return_example" in item) {
+      str += "\n### Return example\n```\n" + item.return_example + "\n```"
+    }
     
     strings.push(str)
   }
-  return strings.join("\n\n")
+  return strings.join("\n---\n")
 }
 
 function chapters(obj) {

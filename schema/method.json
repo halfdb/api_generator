@@ -3,6 +3,13 @@
   "type": "string",
   "enum": [
     "GET",
-    "POST"
+    "POST",
+    "HEAD",
+    "PUT",
+    "DELETE",
+    "CONNECT",
+    "OPTIONS",
+    "TRACE",
+    "PATCH"
   ]
 }

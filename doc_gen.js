@@ -30,6 +30,8 @@ function returns(obj) {
       str += "- `200`: Success.\n"
     } else if (item === 403) {
       str += "- `403`: Auth failed. Login and try again.\n"
+    } else if (item === 404) {
+      str += "- `404`: Resource not found."
     } else if (typeof item === 'object') {
       str += `- \`${item.status_code}\`:`
       if ("description" in item) {

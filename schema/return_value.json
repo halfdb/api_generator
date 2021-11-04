@@ -4,7 +4,7 @@
   "anyOf": [
     {
       "type": "number",
-      "enum": [ 200, 403 ]
+      "enum": [ 200, 403, 404 ]
     },
     {
       "type": "object",

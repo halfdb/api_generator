@@ -1,14 +1,14 @@
 function params(obj) {
   if (obj.length === 0) return ""
 
-  var header = "| Field name | Mandatory | Require value | Comment |\n"
+  var header = "| Field name | Mandatory | Comment |\n"
   header += "|--|--|--|--|\n"
   const strings = []
   for (const item of obj) {
     if (typeof item === "string") {
-      strings.push(`|\`${item}\` | \`true\` | \`true\`| |`)
+      strings.push(`|\`${item}\` | \`true\` | |`)
     } else if (typeof item === "object") {
-      var item_str = `|\`${item}\` | \`true\` | \`true\`| `
+      var item_str = `|\`${item.key}\` | \`${item.mandatory}\` | `
       if ('comment' in item) {
         item_str += item.comment
       }

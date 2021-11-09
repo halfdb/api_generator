@@ -11,10 +11,6 @@
           "type": "boolean",
           "default": true
         },
-        "require_value": {
-          "type": "boolean",
-          "default": true
-        },
         "comment": {
           "type": "string",
           "default": ""

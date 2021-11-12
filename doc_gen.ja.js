@@ -1,7 +1,7 @@
 function params(obj) {
   if (obj.length === 0) return ""
 
-  var header = "| Field name | Mandatory | Comment |\n"
+  var header = "| フィールド | 必須 | コメント |\n"
   header += "|---|---|---|\n"
   const strings = []
   for (const item of obj) {
@@ -16,7 +16,7 @@ function params(obj) {
       strings.push(item_str)
     }
   }
-  return "### Params\n\n" + header + strings.join("\n")
+  return "### パラメーター\n\n" + header + strings.join("\n")
 }
 
 function methods(obj) {
@@ -24,16 +24,16 @@ function methods(obj) {
 }
 
 function returns(obj) {
-  var str = "### Return\n"
+  var str = "### 戻り値\n"
   for (const item of obj) {
     if (item === 200) {
-      str += "- `200`: OK.\n"
+      str += "- `200`: 成功。\n"
     } else if (item === 401) {
-      str += "- `401`: Unauthorized."
+      str += "- `401`: 認証失敗。"
     } else if (item === 403) {
-      str += "- `403`: Forbidden.\n"
+      str += "- `403`: 禁止。\n"
     } else if (item === 404) {
-      str += "- `404`: Not found."
+      str += "- `404`: 存在しない。"
     } else if (typeof item === 'object') {
       str += `- \`${item.status_code}\`:`
       if ("description" in item) {
@@ -61,7 +61,7 @@ function apis(obj) {
     str += "\n\n" + returns(item.returns)
 
     if ("return_example" in item) {
-      str += "\n### Return example\n```\n" + item.return_example + "\n```"
+      str += "\n### 戻り値の例\n```\n" + item.return_example + "\n```"
     }
     
     strings.push(str)
